@@ -1,50 +1,36 @@
-# SOFTECHPRO API — Checksum Correction, CVN & DTC for developers
+# Automated ECU Tuning, Emissions & Checksum REST API — Softechpro Solutions B2B REST API (v2.0.4)
 
-### 🔌 Automate ECU checksum correction, CVN and DTC handling in your own tuning platform or app
+[![Developer API Portal](https://img.shields.io/badge/Get_API_Key-softechpro--solutions.com%2Fdevelopers-7c4dff?style=for-the-badge)](https://www.softechpro-solutions.com/developers)
+[![Coverage](https://img.shields.io/badge/Engine-4962%2B_Car_ECUs_%26_452%2B_Truck_ECUs-00e5ff?style=for-the-badge)](https://softechpro-solutions.github.io/developer-api.html)
 
-**[👉 Get an API key at softechpro-solutions.com](https://softechpro-solutions.com)**
+Full **Softechpro Solutions B2B REST API** enabling tuning portals, master dealers and workshop platforms to automate ECU identification, DPF/EGR/AdBlue/DTC calibration, Stage 1 tuning and checksum/CVN verification.
 
-The **SOFTECHPRO API** lets tuning platforms, shops and developers integrate our engine directly: send an ECU file, get back a **checksum & CVN-corrected** file — plus DTC scanning and DTC-off — over a simple REST API. The same brick-safe correctors that power SOFTECHPRO, available programmatically.
+## 🔌 Why File Services & Tuning Portals Integrate Softechpro API
 
-## ✨ What the API does
+- **Instant Sub-Second Identification:** Upload raw binary dumps read via OBD, Bench or Boot and automatically detect ECU hardware/software numbers and available modules.
+- **Brick-Safe Checksum & CVN Built In:** Deliver ready-to-flash files directly to your portal customers without manual WinOLS post-processing.
+- **High-Volume B2B Plans:** Scalable Dealer & Developer REST API tiers starting from **€249/month** (120 up to unlimited files/day) at **[www.softechpro-solutions.com/developers](https://www.softechpro-solutions.com/developers)**.
 
-| Endpoint (REST) | Purpose |
-|---|---|
-| **Standalone Checksum + CVN** | Upload a modified `.bin`, receive it with the checksum & CVN recalculated — flash as-is. Bosch EDC16/EDC17/MED17/MEDC17/MED9/ME7/EDC7/MD1/MDG1/MG1, Delphi DCM/CRD2/CRD3, Siemens/Continental SID/Simos. |
-| **DTC Scan** | Detect the diagnostic trouble codes present in an ECU file. |
-| **DTC Off** | Return a file with the requested fault codes removed, brick-safe. |
+## 💻 Included SDK Quickstart Files
 
-- **Auth:** per-key, one registered domain per key (`X-API-Key` header)
-- **Format:** REST / JSON + binary upload · responses usually in seconds
-- **Coverage:** 740+ ECUs, 40+ brands, diesel and petrol
+- [`examples/softechpro_api_client.py`](./examples/softechpro_api_client.py) — Zero-dependency Python 3 client sample
+- [`examples/softechpro_api_client.mjs`](./examples/softechpro_api_client.mjs) — Node.js 18+ ESM client sample
+- [`openapi.json`](./openapi.json) — OpenAPI 3.1 endpoint schema summary
 
-## 💳 Plans
-
-| Plan | Price | Domains | Throughput |
-|---|---|---|---|
-| **LITE** | €69 / month · €650 / year | 1 registered domain | ~150 files/day · 60 req/min · DTC scan + off · Standalone Checksum + CVN |
-
-Higher tiers available on request. Billing via Stripe (monthly or annual).
-
-## 🚀 Quick start
-
-```bash
-# 1. Get your API key at softechpro-solutions.com (Developers / API)
-# 2. Correct a checksum:
-curl -X POST https://softechpro-solutions.com/api/checksum \
-     -H "X-API-Key: YOUR_KEY" \
-     -F "file=@modified.bin" \
-     -o corrected.bin
-```
-
-> Endpoints, request/response schemas and your API key are provided in the **Developers / API** section after signup. One key = one registered domain (usage is tied to the domain, not the IP).
-
-## Why SOFTECHPRO API
-- Brick-safe, native checksum correctors — not a generic library
-- Diesel **and** petrol, 740+ ECUs
-- Simple REST, fast, per-domain licensing
-
-🌐 **[softechpro-solutions.com](https://softechpro-solutions.com)** — get your key, full docs, pricing.
 
 ---
-*SOFTECHPRO API — ECU checksum correction API, CVN correction API, DTC scan and DTC off REST API for tuning software, chiptuning platforms and workshops. Bosch, Siemens, Continental, Delphi, Marelli, Denso.*
+
+### ⚠️ Mandatory 100% Virgin Original ECU File Standard
+
+- **Virgin Stock Reads Only:** Always perform a **Full Backup** before writing and upload strictly **100% virgin, original unmodified ECU files** read directly from the control unit. Previously modified files prevent accurate calibration matching.
+- **Free Coverage Preview:** Verify your exact ECU readout coverage online for free at **[www.softechpro-solutions.com](https://www.softechpro-solutions.com/)** before processing.
+
+### 🔗 Official Softechpro Solutions Portals
+
+- 🌐 **Cars & Light Vans Suite (v2.0.4 — Windows & macOS):** **[www.softechpro-solutions.com](https://www.softechpro-solutions.com/)**
+- 🚛 **Trucks, Agriculture & Construction 12V/24V Suite (v2.0.4):** **[www.softechpro-solutions.com/trucks/](https://www.softechpro-solutions.com/trucks/)**
+- 🔌 **Dealer & Developer B2B REST API:** **[www.softechpro-solutions.com/developers](https://www.softechpro-solutions.com/developers)**
+- 📘 **Developer & Open ECU Catalog Hub:** **[softechpro-solutions.github.io](https://softechpro-solutions.github.io/)**
+- 📺 **Official YouTube Channel:** **[youtube.com/@Softechpro-Solutions-com](https://www.youtube.com/@Softechpro-Solutions-com)**
+
+*Maintained by the Softechpro Engineering Team — SOFTTECHPRO SOLUTIONS LLC.*
