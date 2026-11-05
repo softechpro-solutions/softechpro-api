@@ -1,0 +1,30 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Softechpro Solutions — Automated ECU Tuning, Emissions & Checksum REST API",
+    "version": "2.0.4",
+    "description": "Full **Softechpro Solutions B2B REST API** enabling tuning portals, master dealers and workshop platforms to automate ECU identification, DPF/EGR/AdBlue/DTC calibration, Stage 1 tuning and checksum/CVN verification. Official B2B API keys & plans at https://www.softechpro-solutions.com/developers"
+  },
+  "servers": [
+    {
+      "url": "https://www.softechpro-solutions.com"
+    }
+  ],
+  "paths": {
+    "/api/coverage-public": {
+      "get": {
+        "summary": "Retrieve live supported ECU brands, models and solution counts"
+      }
+    },
+    "/api/v1/analyze": {
+      "post": {
+        "summary": "Upload virgin original ECU binary to list available automated modules & checksum family"
+      }
+    },
+    "/api/v1/process": {
+      "post": {
+        "summary": "Apply selected calibration modules (DPF, EGR, AdBlue, DTC, Stage 1) with automatic checksum & CVN correction"
+      }
+    }
+  }
+}
